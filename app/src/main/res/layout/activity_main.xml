@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="com.ldoublem.flightseat.MainActivity">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.ldoublem.flightseatselect.FlightSeatView
+                android:id="@+id/fsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="clear"
+                android:text="clear"
+                android:textColor="@android:color/white"/>
+
+
+            <Button
+                android:id="@+id/btn_zoom"
+                android:layout_alignParentRight="true"
+
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="zoom"
+                android:text="ok"
+                android:textColor="@android:color/white"/>
+
+
+        </RelativeLayout>
+</LinearLayout>
