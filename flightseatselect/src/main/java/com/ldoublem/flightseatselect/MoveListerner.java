@@ -104,7 +104,6 @@ public abstract class MoveListerner implements OnTouchListener,
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
                             float distanceY) {
-//        Log.e("a", "AA:B" + distanceX + ":" + distanceY);
         float mOldY = e1.getY();
         int y = (int) e2.getRawY();
         if (!isScorllStart) {

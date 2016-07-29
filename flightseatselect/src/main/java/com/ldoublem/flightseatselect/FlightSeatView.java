@@ -77,7 +77,7 @@ public class FlightSeatView extends View {
     float scaleValue = 2.0f;
     float scaleMaxValue = 3f;
     float scaleMap = 10f;
-    private int maxFristStates = 10;
+    private int maxSelectStates = 10;
     float moveY = 0;
 
 
@@ -96,6 +96,12 @@ public class FlightSeatView extends View {
         mSeatSelectingRectF.clear();
         invalidate();
     }
+
+    public void setMaxSelectStates(int count)
+    {
+        maxSelectStates=count;
+    }
+
 
 
     public FlightSeatView(Context context) {
@@ -227,9 +233,9 @@ public class FlightSeatView extends View {
 
                             } else {
                                 if (mSeatSelecting.size()
-                                        >= maxFristStates) {
+                                        >= maxSelectStates) {
                                     Toast.makeText(getContext(),
-                                            "Choose a maximum of " + maxFristStates,
+                                            "Choose a maximum of " + maxSelectStates,
                                             Toast.LENGTH_SHORT).show();
                                     return;
 
@@ -321,7 +327,6 @@ public class FlightSeatView extends View {
     enum SeatType {
         Left, Middle, Right
     }
-
 
     enum SeatState {
         Normal, Selected, Selecting
