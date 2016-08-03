@@ -14,6 +14,7 @@ Ticket seat selection
         mFlightSeatView.startAnim(true);// false zoom in,true zoom out
         mFlightSeatView.setEmptySelecting();//clear 
         mFlightSeatView.setSeatSelected(row, column);
+        mFlightSeatView.goCabinPosition(FlightSeatView.CabinPosition.Middle);//top middle last
 ```
 ## About me
 
