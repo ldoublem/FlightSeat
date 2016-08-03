@@ -14,13 +14,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mFlightSeatView = (FlightSeatView) findViewById(R.id.fsv);
-        mFlightSeatView.setMaxSelectStates(3);
+        mFlightSeatView.setMaxSelectStates(10);
+
         setTestData();
     }
 
     public void zoom(View v) {
         mFlightSeatView.startAnim(true);
     }
+
+
+    public void gotoposition(View v) {
+        mFlightSeatView.goCabinPosition(FlightSeatView.CabinPosition.Middle);
+    }
+
 
     public void clear(View v) {
         mFlightSeatView.setEmptySelecting();

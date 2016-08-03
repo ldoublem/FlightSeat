@@ -18,6 +18,7 @@
 
             <com.ldoublem.flightseatselect.FlightSeatView
                 android:id="@+id/fsv"
+                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
@@ -29,6 +30,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:onClick="clear"
                 android:text="clear"
                 android:textColor="@android:color/white"/>
@@ -37,6 +39,7 @@
             <Button
                 android:id="@+id/btn_zoom"
                 android:layout_alignParentRight="true"
+                android:background="@android:color/transparent"
 
                 android:layout_alignParentBottom="true"
                 android:layout_width="wrap_content"
@@ -44,6 +47,19 @@
                 android:onClick="zoom"
                 android:text="ok"
                 android:textColor="@android:color/white"/>
+
+
+            <Button
+                android:id="@+id/btn_goto"
+                android:layout_centerHorizontal="true"
+                android:background="@android:color/transparent"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="gotoposition"
+                android:text="goto"
+                android:textColor="@android:color/white"/>
+
 
 
         </RelativeLayout>

@@ -12,8 +12,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
@@ -87,7 +86,26 @@ public class FlightSeatView extends View {
 
 
     public void setSeatSelected(int row, int column) {
+
         mSeatSelected.put(getSeatKeyName(row, column), SeatState.Selected);
+    }
+
+
+    public void goCabinPosition(CabinPosition mCabinPosition) {
+        if (mAnimatedValue > 0) {
+
+            if (mCabinPosition == CabinPosition.Top) {
+                moveY = 0;
+
+            } else if (mCabinPosition == CabinPosition.Last) {
+                moveY = rectFCabin.height() - rectFCabin.width() * 2.5f;
+            } else if (mCabinPosition == CabinPosition.Middle) {
+                moveY = (rectFCabin.height() - rectFCabin.width() * 2.5f) / 2;
+            }
+            invalidate();
+
+
+        }
     }
 
 
@@ -97,11 +115,9 @@ public class FlightSeatView extends View {
         invalidate();
     }
 
-    public void setMaxSelectStates(int count)
-    {
-        maxSelectStates=count;
+    public void setMaxSelectStates(int count) {
+        maxSelectStates = count;
     }
-
 
 
     public FlightSeatView(Context context) {
@@ -324,6 +340,10 @@ public class FlightSeatView extends View {
     }
 
 
+    public enum CabinPosition {
+        Top, Middle, Last
+    }
+
     enum SeatType {
         Left, Middle, Right
     }
@@ -338,13 +358,7 @@ public class FlightSeatView extends View {
 
 
     private void setSeat(int i, int j, Canvas canvas, float seatWH, SeatType type
-            , CabinType cabinType
-    ) {
-
-//        if(true)
-//            return;
-
-
+            , CabinType cabinType) {
         float top = 0f;
         float left = 0f;
         if (cabinType == CabinType.Frist) {
@@ -591,9 +605,6 @@ public class FlightSeatView extends View {
 
             );
 
-//            setBitmap(canvas,seatWH, SeatState.Normal,
-//                    left,top);
-
 
         }
     }
@@ -624,7 +635,6 @@ public class FlightSeatView extends View {
             mPaintMap.setStyle(Paint.Style.STROKE);
             mPaintMap.setStrokeWidth(dip2px(0.75f));
             mPaintMap.setColor(Color.RED);
-//            mPaintMap.setAlpha(80);
 
             canvas.drawRect(rectFMapSee, mPaintMap);
 
