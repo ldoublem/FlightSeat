@@ -10,12 +10,13 @@ Ticket seat selection
 ![png](https://github.com/ldoublem/FlightSeat/blob/master/screenshot/seat_png.png)
 
 ##Usage 
+```java
+mFlightSeatView.startAnim(true);// false zoom in,true zoom out
+mFlightSeatView.setEmptySelecting();//clear 
+mFlightSeatView.setSeatSelected(row, column);
+mFlightSeatView.goCabinPosition(FlightSeatView.CabinPosition.Middle);//top middle last
 ```
-        mFlightSeatView.startAnim(true);// false zoom in,true zoom out
-        mFlightSeatView.setEmptySelecting();//clear 
-        mFlightSeatView.setSeatSelected(row, column);
-        mFlightSeatView.goCabinPosition(FlightSeatView.CabinPosition.Middle);//top middle last
-```
+
 ## About me
 
 An android developer in Hangzhou.
